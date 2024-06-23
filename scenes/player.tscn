@@ -1,23 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://bodw1oecw4i7v"]
+[gd_scene load_steps=7 format=3 uid="uid://bodw1oecw4i7v"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dhkj2"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6xxfh"]
-size = Vector2(16, 16)
+[ext_resource type="Texture2D" uid="uid://b6fkljw3o7bkj" path="res://assets/sprites/tileset.png" id="2_tgt6b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rfh7q"]
 radius = 8.0
 
+[sub_resource type="Animation" id="Animation_05mxu"]
+resource_name = "strain"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_hbs4r"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1ytp"]
+_data = {
+"RESET": SubResource("Animation_hbs4r"),
+"strain": SubResource("Animation_05mxu")
+}
+
 [node name="Player" type="CharacterBody2D"]
-z_index = 1
+z_index = 2
 collision_mask = 0
 script = ExtResource("1_dhkj2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_6xxfh")
+texture = ExtResource("2_tgt6b")
+hframes = 4
+vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rfh7q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l1ytp")
+}

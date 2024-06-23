@@ -13,9 +13,11 @@ script = ExtResource("1_hasr6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)
+scale = Vector2(1.5, 1.5)
 texture = SubResource("PlaceholderTexture2D_dllyh")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_18p5g")
