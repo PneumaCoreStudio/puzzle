@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://xaf51onwrsqu"]
+[gd_scene load_steps=4 format=3 uid="uid://xaf51onwrsqu"]
+
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_80bm5"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fr6iq"]
 size = Vector2(16, 16)
@@ -8,6 +10,9 @@ size = Vector2(16, 16)
 
 [node name="Block" type="RigidBody2D"]
 gravity_scale = 0.0
+linear_damp = 100.0
+angular_damp = 100.0
+script = ExtResource("1_80bm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_fr6iq")
