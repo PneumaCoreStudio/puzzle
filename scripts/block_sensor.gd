@@ -18,7 +18,7 @@ func _ready():
 		SENSOR_COLOR.BLUE:
 			modulate = Color.BLUE
 			
-func _physics_process(delta):
+func _physics_process(_delta):
 	if !attached_block:
 		var bodies = area_2d.get_overlapping_bodies()
 		for body in bodies:

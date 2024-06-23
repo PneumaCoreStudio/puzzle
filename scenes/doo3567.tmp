@@ -59,6 +59,8 @@ _data = {
 }
 
 [node name="door" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_xokvw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
