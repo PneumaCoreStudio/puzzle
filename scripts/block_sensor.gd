@@ -9,4 +9,5 @@ func _ready():
 	
 func _on_body_entered(body : Node2D):
 	if body is Block:
+		print("TURE")
 		body.position = lerp(body.position, collision_shape_2d.shape.get_rect().get_center(), 0.125)
