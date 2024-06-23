@@ -6,9 +6,9 @@
 
 [node name="World" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_gr1qo")]
+[node name="Player" parent="." instance=ExtResource("1_gr1qo")]
 
-[node name="Node2D2" parent="." instance=ExtResource("2_qqytw")]
+[node name="Block" parent="." instance=ExtResource("2_qqytw")]
 position = Vector2(191, 59)
 
 [node name="BlockSensor" parent="." instance=ExtResource("3_dlf6n")]

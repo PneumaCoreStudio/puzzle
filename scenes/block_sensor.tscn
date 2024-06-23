@@ -3,13 +3,15 @@
 [ext_resource type="Script" path="res://scripts/block_sensor.gd" id="1_hasr6"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dllyh"]
-size = Vector2(48, 48)
+size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18p5g"]
-size = Vector2(48, 48)
+size = Vector2(40, 40)
 
 [node name="BlockSensor" type="Node2D"]
 script = ExtResource("1_hasr6")
+
+[node name="Center" type="Marker2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)
