@@ -10,6 +10,8 @@
 
 [node name="Block" parent="." instance=ExtResource("2_qqytw")]
 position = Vector2(191, 59)
+key_color = 2
 
 [node name="BlockSensor" parent="." instance=ExtResource("3_dlf6n")]
 position = Vector2(448, 74)
+sensor_color = 2
