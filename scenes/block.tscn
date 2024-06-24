@@ -10,9 +10,8 @@ height = 16.0
 [node name="Block" type="RigidBody2D"]
 z_index = 1
 gravity_scale = 0.0
-sleeping = true
 lock_rotation = true
-linear_damp = 5.0
+linear_damp = 2.5
 script = ExtResource("1_80bm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -4,10 +4,10 @@ extends Node2D
 enum SENSOR_COLOR { RED, GREEN, BLUE }
 @export var sensor_color : SENSOR_COLOR
 
-@onready var area_2d = $Area2D
 @onready var center = $Center
+@onready var area_2d = $Area2D
 
-var attached_block : Block = null
+var block_locked : bool = false
 
 func _ready():
 	match sensor_color:
@@ -19,13 +19,18 @@ func _ready():
 			modulate = Color.BLUE
 			
 func _physics_process(_delta):
-	if !attached_block:
-		var bodies = area_2d.get_overlapping_bodies()
-		for body in bodies:
-			if body is Block && body.key_color == sensor_color:
-				if body.global_position != center.global_position:
-					body.global_position = body.position.move_toward(center.global_position, 2.0)
-					
-				else:
-					body.modulate = Color.WHITE
-					attached_block = body
+	if !block_locked:
+		lock_block()
+		
+func lock_block():
+	var bodies = area_2d.get_overlapping_bodies()
+	var center = center.global_position
+	for body in bodies:
+		if body is Block && body.key_color == sensor_color:
+			if body.global_position != center:
+				body.global_position = body.position.move_toward(center, 0.5)
+				
+			if body.global_position.distance_to(center) <= 1 && abs(body.linear_velocity) <= Vector2(5, 5):
+				body.modulate = Color.WHITE
+				block_locked = true
+				body.freeze = true

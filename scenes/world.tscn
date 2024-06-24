@@ -14,7 +14,6 @@ position = Vector2(191, 59)
 
 [node name="BlockSensor" parent="." instance=ExtResource("3_dlf6n")]
 position = Vector2(-1.99997, -69)
-sensor_color = 2
 
 [node name="door" parent="." instance=ExtResource("4_a1ubn")]
 position = Vector2(0, -20)
