@@ -14,11 +14,6 @@ config/name="Puzzle"
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Asset_Drawer/plugin.cfg")
