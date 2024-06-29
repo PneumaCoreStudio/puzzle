@@ -12,24 +12,22 @@ var open_width : int = 30
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		if !doorTween:
+		if !doorTween or !doorTween.is_valid():
 			doorTween = create_tween()
 
-		if !open:
+		if !open && doorTween.is_valid():
 			#doorTween.tween_property(sprite_l, "modulate", Color("GREEN"), .02)
 			#doorTween.parallel().tween_property(sprite_r, "modulate", Color("GREEN"), .02)
 			doorTween.parallel().tween_property(door_l, "global_position:x", global_position.x - open_width, open_time)
 			doorTween.parallel().tween_property(door_r, "global_position:x", global_position.x + open_width, open_time)
 			await doorTween.finished
-			doorTween = null
 			open = true
-		elif open:
+		elif open && doorTween.is_valid():
 			#doorTween.tween_property(sprite_l, "modulate", Color("RED"), .02)
 			#doorTween.parallel().tween_property(sprite_r, "modulate", Color("RED"), .02)
-			doorTween.parallel().tween_property(door_l, "global_position:x", global_position.x + open_width, open_time)
-			doorTween.parallel().tween_property(door_r, "global_position:x", global_position.x - open_width , open_time)
+			doorTween.tween_property(door_l, "global_position:x", global_position.x + open_width, open_time)
+			doorTween.parallel().tween_property(door_r, "global_position:x", global_position.x - open_width, open_time)
 			await doorTween.finished
-			doorTween = null
 			open = false
 		else:
 			return
