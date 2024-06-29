@@ -14,7 +14,7 @@ position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_ir3ou")
 
 [node name="Sprite2D" type="Sprite2D" parent="door_L"]
-modulate = Color(0.627451, 0.984314, 0.54902, 1)
+modulate = Color(0.803922, 0.984314, 0.54902, 1)
 texture = ExtResource("2_65m3d")
 hframes = 4
 vframes = 2
