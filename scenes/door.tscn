@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://okmxl6bv822b"]
 
-[ext_resource type="Script" path="res://scenes/door.gd" id="1_knkv0"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_mo5ek"]
 [ext_resource type="Texture2D" uid="uid://b6fkljw3o7bkj" path="res://assets/sprites/tileset.png" id="2_65m3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir3ou"]
 size = Vector2(16, 16)
 
 [node name="door" type="StaticBody2D"]
-script = ExtResource("1_knkv0")
+script = ExtResource("1_mo5ek")
 
 [node name="door_L" type="CollisionShape2D" parent="."]
 position = Vector2(-8, 0)
