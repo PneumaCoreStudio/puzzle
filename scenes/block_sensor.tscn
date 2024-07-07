@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bauxphimk6dj0"]
 
-[ext_resource type="Script" path="res://scripts/block_sensor.gd" id="1_hasr6"]
+[ext_resource type="Script" path="res://scripts/world/block_sensor.gd" id="1_hasr6"]
 [ext_resource type="Texture2D" uid="uid://b6fkljw3o7bkj" path="res://assets/sprites/tileset.png" id="2_ysx2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18p5g"]
