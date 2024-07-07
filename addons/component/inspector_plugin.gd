@@ -1,6 +1,6 @@
 extends EditorInspectorPlugin
 
-var dropdown_control = preload("res://addons/components/component_menu.gd")
+var dropdown_control = preload("res://addons/component/component_menu.gd")
 
 func _can_handle(object):
 	if object is Component:

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://xaf51onwrsqu" path="res://scenes/block.tscn" id="2_qqytw"]
 [ext_resource type="PackedScene" uid="uid://bauxphimk6dj0" path="res://scenes/block_sensor.tscn" id="3_dlf6n"]
 [ext_resource type="PackedScene" uid="uid://okmxl6bv822b" path="res://scenes/door.tscn" id="4_a1ubn"]
-[ext_resource type="Script" path="res://addons/components/components/actuator.gd" id="5_11lw2"]
+[ext_resource type="Script" path="res://addons/component/components/device/listener.gd" id="5_kirso"]
 
 [node name="World" type="Node2D"]
 
@@ -19,8 +19,9 @@ position = Vector2(-1.99997, -69)
 [node name="door" parent="." instance=ExtResource("4_a1ubn")]
 position = Vector2(0, -20)
 
-[node name="Actuator2" type="Node" parent="."]
-script = ExtResource("5_11lw2")
-
-[node name="Actuator" type="Node" parent="."]
-script = ExtResource("5_11lw2")
+[node name="Listener" type="Node" parent="."]
+script = ExtResource("5_kirso")
+component = {
+"name": "Listener",
+"script": ExtResource("5_kirso")
+}
