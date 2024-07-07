@@ -1,0 +1,15 @@
+[configuration]
+
+entry_symbol = "component_library_init"
+compatibility_minimum = "4.2"
+
+[libraries]
+
+macos.debug = "res://bin/libcomponent.macos.template_debug.framework"
+macos.release = "res://bin/libcomponent.macos.template_release.framework"
+windows.debug.x86_32 = "res://bin/libcomponent.windows.template_debug.x86_32.dll"
+windows.release.x86_32 = "res://bin/libcomponent.windows.template_release.x86_32.dll"
+windows.debug.x86_64 = "res://bin/libcomponent.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://bin/libcomponent.windows.template_release.x86_64.dll"
+linux.debug.x86_64 = "res://bin/libcomponent.linux.template_debug.x86_64.so"
+linux.release.x86_64 = "res://bin/libcomponent.linux.template_debug.x86_64.so"
