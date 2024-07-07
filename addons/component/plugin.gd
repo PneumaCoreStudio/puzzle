@@ -20,7 +20,10 @@ func register_components():
 	Component.components.clear()
 	for dir in DirAccess.get_directories_at(COMPONENTS_DIR):
 		var path = str(COMPONENTS_DIR, dir)
-		Component.components[dir] = []
+		
+		if !DirAccess.get_files_at(path).is_empty():
+			Component.components[dir] = []
+			
 		for file_name in DirAccess.get_files_at(path):
 			var file = load(str(path, "/", file_name))
 			if file is GDScript && file.new() is Component:

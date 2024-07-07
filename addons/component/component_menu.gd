@@ -6,7 +6,7 @@ var component_menu : MenuButton = MenuButton.new()
 func _init():
 	add_child(component_menu)
 	add_focusable(component_menu)
-	
+
 	component_menu.get_popup().submenu_popup_delay = 0.125
 	component_menu.get_popup().add_separator("Category")
 	for category in Component.get_categories():
