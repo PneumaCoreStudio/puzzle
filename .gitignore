@@ -1,4 +1,2 @@
 # Godot 4+ specific ignores
-.godot/
-debug/
-addons/Asset_Drawer/
+godot-cpp/
